@@ -13,11 +13,9 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
       - "/etc/TZ:/etc/timezone:ro"
       #- "./openhab_addons:/openhab/addons"
-      - "./openhab_conf:/openhab/conf"
-      - "./openhab_conf/rules:/openhab/conf/rules"
-      - "./openhab_conf/items:/openhab/conf/items"
+      - "/volume1/docker/volumes/openhab3/openhab_conf:/openhab/conf"
       #- "./openhab_userdata:/openhab/userdata"
-      - "openhab_userdata_log:/openhab/userdata/logs"
+      - "/volume1/docker/volumes/openhab3/openhab_userdata_log:/openhab/userdata/logs"
     environment:
       OPENHAB_HTTP_PORT: "8080"
       OPENHAB_HTTPS_PORT: "8443"
@@ -30,6 +28,6 @@ services:
     ports:
       - "9001:9001"
     volumes:
-      - openhab_userdata_log:/openhab/userdata/logs
+      - /volume1/docker/volumes/openhab3/openhab_userdata_log:/openhab/userdata/logs
 volumes:
   openhab_userdata_log:
