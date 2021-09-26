@@ -2,7 +2,7 @@ version: '2.2'
 
 services:
   openhab:
-    image: "openhab/openhab:3.1.0-debian"
+    image: "openhab/openhab:snapshot-debian"
     container_name: "synology_openhab_openhab3"
     restart: always
     network_mode: bridge
